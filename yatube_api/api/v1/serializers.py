@@ -42,7 +42,7 @@ class GroupSerializer(serializers.ModelSerializer):
     posts = serializers.StringRelatedField(many=True, read_only=True)
 
     class Meta:
-        fields = '__all__'
+        fields = ('id', 'title', 'description', 'posts', 'slug')
         model = Group
 
 
@@ -61,7 +61,7 @@ class FollowSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Follow
-        fields = '__all__'
+        fields = ('id', 'user', 'following')
         validators = [UniqueTogetherValidator(
             queryset=Follow.objects.all(),
             fields=('user', 'following')

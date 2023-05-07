@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from posts.models import Group, Follow, Post
+from posts.models import Follow, Group, Post
 from rest_framework.permissions import (
     IsAuthenticated, IsAuthenticatedOrReadOnly)
 from rest_framework.pagination import LimitOffsetPagination
